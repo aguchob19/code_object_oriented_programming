@@ -1,27 +1,16 @@
 # create a class
 class DataShell():
+    # Initialize class with self argument
+    def __init__(self):
+        pass
 
-    # Declare a class variable family, and assign value of "DataShell"
-    family = 'DataShell'
+    # Define class method which takes self argument: print_static
+    def print_static(self):
+        # Print string
+        print("You just executed a class method!")
 
-    # initialize class with self argument, identifier arguments
-    def __init__(self, identifier):
-        # Set identifier as instance variable of input argument
-        self.identifier = identifier
+# Instantiate DataShell taking no arguments: my_data_shell
+my_data_shell = DataShell()
 
-
-# declare variable
-x = 10
-
-# instantiate DataShell
-my_data_shell = DataShell(x)
-
-# print data shell identifier
-print(my_data_shell.family)
-
-# Override the my_data_shell.family value with "NotDataShell"
-my_data_shell.family = "NotDataShell"
-
-# Print my_data_shell class variable family once again
-print(my_data_shell.family)
-
+# Call the print_static method of your newly created object
+my_data_shell.print_static()
