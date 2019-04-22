@@ -19,3 +19,9 @@ my_data_shell = DataShell(x)
 # print data shell identifier
 print(my_data_shell.family)
 
+# Override the my_data_shell.family value with "NotDataShell"
+my_data_shell.family = "NotDataShell"
+
+# Print my_data_shell class variable family once again
+print(my_data_shell.family)
+
