@@ -1,18 +1,20 @@
 # create a class
-class DataShell():
+class DataShell:
     # Initialize class with self and dataList as arguments
     def __init__(self, dataList):
         # Set data as instance variable, and assign it the value of dataList
         self.data = dataList
 
-    # Define class method which takes self argument: show
+    # Define method that returns data: show
     def show(self):
-        print(self.data)
+        # return
+        return self.data
 
     # Define method that prints average of data: avg
     def avg(self):
         avg = sum(self.data) / float(len(self.data))
-        print(avg)
+        # returnd
+        return avg
 
 
 # Declare variable with list of integers from 1 to 10: integer_list
@@ -22,5 +24,5 @@ integer_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 my_data_shell = DataShell(integer_list)
 
 # Call the show and avg methods of your newly created object
-my_data_shell.show()
-my_data_shell.avg()
+print(my_data_shell.show())
+print(my_data_shell.avg())
