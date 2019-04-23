@@ -9,10 +9,16 @@ class DataShell:
         self.file = inputFile
 
 
+# Create class CsvDataShell, which inherits from DataShell
+class CsvDataShell(DataShell):
+    def __init__(self, inputFile):
+        self.inputFile = inputFile
+        self.data = pd.read_csv(inputFile)
+
 us_life_expectancy = r'data_sets\us_life_expectancy.csv'
 
-# Instantiate DataShell as my_data_shell
-my_data_shell = DataShell(us_life_expectancy)
+# Instantiate CsvDataShell as us_data_shell, passing us_life_expectancy as argument
+us_data_shell = CsvDataShell(us_life_expectancy)
 
 # Print my_data_shell
-print(my_data_shell)
+print(us_data_shell.data)
