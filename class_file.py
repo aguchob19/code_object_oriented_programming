@@ -1,28 +1,40 @@
+import numpy as np
+import pandas as pd
+
+
 # create a class
 class DataShell:
     # Initialize class with self and dataList as arguments
-    def __init__(self, dataList):
+    def __init__(self, inputFile):
         # Set data as instance variable, and assign it the value of dataList
-        self.data = dataList
+        self.file = inputFile
 
-    # Define method that returns data: show
-    def show(self):
-        # return
-        return self.data
-
-    # Define method that prints average of data: avg
-    def avg(self):
-        avg = sum(self.data) / float(len(self.data))
-        # returnd
-        return avg
+    # Define generate_csv method, with self argument
+    def generate_csv(self):
+        self.data_as_csv = pd.read_csv(self.file)
+        return self.data_as_csv
 
 
-# Declare variable with list of integers from 1 to 10: integer_list
-integer_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+us_life_expectancy = r'data_sets\us_life_expectancy.csv'
 
-# Instantiate DataShell taking integer_list as argument: my_data_shell
-my_data_shell = DataShell(integer_list)
+# Instantiate DataShell with us_life_expectancy as input argument
+data_shell = DataShell(us_life_expectancy)
 
-# Call the show and avg methods of your newly created object
-print(my_data_shell.show())
-print(my_data_shell.avg())
+# Call data_shell's generate_csv method, assign it to df
+df = data_shell.generate_csv()
+
+# Print df
+print(df)
+
+
+# # Define method that returns data: show
+# def show(self):
+#     # return
+#     return self.data
+#
+#
+# # Define method that prints average of data: avg
+# def avg(self):
+#     avg = sum(self.data) / float(len(self.data))
+#     # returnd
+#     return avg
